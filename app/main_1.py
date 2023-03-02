@@ -5,6 +5,8 @@ import os
 import shutil
 import re
 import rarfile
+from threading import Thread
+
 
 extensions_img = ['.jpeg', '.png', '.jpg', '.svg']
 extensions_doc = ['.doc', '.docx', '.txt', '.pdf', '.xlsx', '.pptx']
