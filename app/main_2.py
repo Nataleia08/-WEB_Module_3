@@ -26,14 +26,14 @@ if __name__ == "__main__":
 
     prs = []
     timers = []
-    for i in exp:
+    for i in [128, 255, 99999, 10651060]:
         timer = time()
         timers.append(timer)
         pr = Process(name= f"{i} number process", target= factorize, args= ([i],))
         pr.start()
         prs.append(pr)
-    # [pr.join() for pr in prs]
-    [print(f"{round(time() - timer, 4)} second") for timer in timers]
+    [pr.join() for pr in prs]
+    [print(f"{pr.name} {round(time() - timer, 4)} second") for timer in timers]
 
-    with Pool(processes=2) as pool:
-        pool.map(factorize, [128, 255, 99999, 10651060])
+    with Pool(processes=4) as pool:
+        pool.map(factorize, [[128], [255], [99999], [10651060]])
