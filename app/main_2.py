@@ -42,5 +42,3 @@ if __name__ == "__main__":
 
     [print(f"{pr.name} {round(timers_end[i] - timers_start[i], 4)} second") for i in range(4)]
 
-    with Pool(processes=4) as pool:
-        print(pool.map(factorize, [[128], [255], [99999], [10651060]]))
